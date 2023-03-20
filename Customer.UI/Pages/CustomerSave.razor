@@ -1,0 +1,31 @@
+﻿@page "/customer/{id:int}"
+
+
+@inherits Customer.UI.BAL.CustomerSave
+
+<PageTitle>Maintain Customer</PageTitle>
+
+<h3>@title</h3>
+
+<EditForm Model=@customerDetailsModel OnValidSubmit=@HandleSubmit>
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="FirstName">First Name</label>
+        <InputText id="FirstName" class="form-control" @bind-Value="customerDetailsModel.FirstName" />
+    </div>
+
+    <div class="form-group">
+        <label for="Surname">Surname</label>
+        <InputText id="Surname" class="form-control" @bind-Value="customerDetailsModel.Surname" />
+    </div>
+
+    <br />
+
+    <p>
+        <button class="btn btn-primary" type="submit">Save Customer</button>
+
+        <button class="btn btn-secondary" type="button" @onclick="()=>Cancel()">Cancel</button>
+    </p>
+</EditForm>

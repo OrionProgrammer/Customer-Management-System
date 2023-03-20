@@ -1,0 +1,38 @@
+﻿@page "/"
+
+@inherits Customer.UI.BAL.index
+
+<PageTitle>Customers</PageTitle>
+
+<h1>Customer Management System</h1>
+
+<p>
+    <button class="btn btn-primary" type="button" @onclick="()=>New()">Add New Customer</button>
+</p>
+
+  <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Surname</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+    
+            <Virtualize Context="cust" Items="@customers">
+                <tr>
+                    <td>@cust.Id</td>
+                    <td>@cust.FirstName</td>
+                    <td>@cust.Surname</td>
+                    <td>
+                        <a href="#" @onclick="()=>Edit(cust.Id)">Edit</a>
+                    </td>
+                <td><a href="#" @onclick="()=>Delete(cust.Id)">Delete</a></td>
+                </tr>
+            </Virtualize>
+        
+        </tbody>    
+  </table>
