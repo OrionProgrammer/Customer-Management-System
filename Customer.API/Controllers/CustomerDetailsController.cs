@@ -12,16 +12,13 @@ using System.Net;
 public class CustomerDetailsController : BaseController
 {
     private readonly IUnitOfWork _unitOfWork;
-    private readonly ICustomerRepository _customerRepository;
     private readonly IMapper _mapper;
 
     public CustomerDetailsController(IUnitOfWork unitOfWork,
-        IMapper mapper,
-        ICustomerRepository customerRepository)
+        IMapper mapper)
     {
         _unitOfWork = unitOfWork;
         _mapper = mapper;
-        _customerRepository = customerRepository;
     }
 
 
