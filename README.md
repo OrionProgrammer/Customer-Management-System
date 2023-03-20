@@ -15,7 +15,7 @@
 * Layered Architecture
 * Exception Handling Middleware
 * Visual Studio 2022
-* Entity Framework Core
+* Entity Framework Core 7
 * Concurreny Check applied on EF fields
 * SOLID Principles (Dependancy Injection, Single Resposibility, Interface Segregation)
 * Respository Pattern + Generic Repository
